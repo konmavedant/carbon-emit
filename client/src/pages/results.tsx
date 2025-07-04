@@ -1,6 +1,7 @@
 import { useLocation } from "wouter";
 import { useEffect } from "react";
 import EmissionCharts from "@/components/results/emission-charts";
+import EmissionInsights from "@/components/results/emission-insights";
 import AiRecommendations from "@/components/results/ai-recommendations";
 import ActionButtons from "@/components/results/action-buttons";
 
@@ -34,6 +35,7 @@ export default function Results() {
           </p>
         </div>
 
+        <EmissionInsights data={results} />
         <EmissionCharts data={results} />
         <AiRecommendations suggestions={results.suggestions} />
         <ActionButtons />

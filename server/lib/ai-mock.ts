@@ -21,11 +21,11 @@ export function generateOptimizationSuggestions(
 ): OptimizationSuggestion[] {
   if (type === 'personal') {
     const calc = calculations as PersonalEmissionCalculations;
-    return [
+    const suggestions: OptimizationSuggestion[] = [
       {
         category: 'Energy',
         title: 'Switch to Renewable Energy',
-        description: 'Install solar panels or switch to a green energy provider',
+        description: 'Install solar panels or switch to a green energy provider to reduce electricity emissions',
         potentialReduction: calc.electricity * 0.8,
         icon: 'sun',
         color: 'emerald',
@@ -33,7 +33,7 @@ export function generateOptimizationSuggestions(
       {
         category: 'Transport',
         title: 'Electric Vehicle',
-        description: 'Consider switching to an electric or hybrid vehicle',
+        description: 'Consider switching to an electric or hybrid vehicle to reduce transport emissions',
         potentialReduction: calc.transport * 0.7,
         icon: 'zap',
         color: 'blue',
@@ -47,6 +47,20 @@ export function generateOptimizationSuggestions(
         color: 'amber',
       },
     ];
+
+    // Add waste reduction suggestion if waste is significant
+    if (calc.waste && calc.waste > 0.1) {
+      suggestions.push({
+        category: 'Waste',
+        title: 'Waste Reduction & Recycling',
+        description: 'Implement composting, increase recycling, and reduce single-use items',
+        potentialReduction: calc.waste * 0.6,
+        icon: 'recycle',
+        color: 'emerald',
+      });
+    }
+
+    return suggestions;
   } else {
     const calc = calculations as IndustrialEmissionCalculations;
     return [

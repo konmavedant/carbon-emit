@@ -21,6 +21,7 @@ const formSchema = z.object({
   publicTransportUsage: z.string().min(1, "Public transport usage is required"),
   dietType: z.string().min(1, "Diet type is required"),
   monthlyShopping: z.coerce.number().min(0, "Must be a positive number"),
+  weeklyWasteKg: z.coerce.number().min(0, "Must be a positive number"),
 });
 
 export default function PersonalForm() {
@@ -37,6 +38,7 @@ export default function PersonalForm() {
       publicTransportUsage: "",
       dietType: "",
       monthlyShopping: 0,
+      weeklyWasteKg: 0,
     },
   });
 
@@ -68,6 +70,56 @@ export default function PersonalForm() {
     "Germany",
     "Canada",
     "Australia",
+    "France",
+    "Japan",
+    "Brazil",
+    "South Korea",
+    "Italy",
+    "Spain",
+    "Netherlands",
+    "Poland",
+    "South Africa",
+    "Mexico",
+    "Turkey",
+    "Argentina",
+    "Norway",
+    "Sweden",
+    "Switzerland",
+    "Finland",
+    "Denmark",
+    "Belgium",
+    "Austria",
+    "Portugal",
+    "Greece",
+    "Ireland",
+    "New Zealand",
+    "Thailand",
+    "Malaysia",
+    "Indonesia",
+    "Philippines",
+    "Vietnam",
+    "Singapore",
+    "Israel",
+    "United Arab Emirates",
+    "Saudi Arabia",
+    "Egypt",
+    "Chile",
+    "Colombia",
+    "Peru",
+    "Russia",
+    "Ukraine",
+    "Czech Republic",
+    "Hungary",
+    "Romania",
+    "Bulgaria",
+    "Croatia",
+    "Slovakia",
+    "Slovenia",
+    "Lithuania",
+    "Latvia",
+    "Estonia",
+    "India",
+    "China",
     "Other"
   ];
 
@@ -217,7 +269,7 @@ export default function PersonalForm() {
                   Lifestyle & Consumption
                 </CardTitle>
               </CardHeader>
-              <CardContent className="grid md:grid-cols-2 gap-4">
+              <CardContent className="grid md:grid-cols-3 gap-4">
                 <FormField
                   control={form.control}
                   name="dietType"
@@ -250,6 +302,19 @@ export default function PersonalForm() {
                       <FormLabel>Monthly Shopping ($)</FormLabel>
                       <FormControl>
                         <Input type="number" placeholder="e.g., 500" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="weeklyWasteKg"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Weekly Waste (kg)</FormLabel>
+                      <FormControl>
+                        <Input type="number" placeholder="e.g., 15" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

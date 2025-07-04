@@ -107,7 +107,19 @@ The application uses three main database tables:
 
 ## Changelog
 
-- July 04, 2025. Initial setup
+- July 04, 2025: Initial setup
+- July 04, 2025: Enhanced application with comprehensive improvements:
+  - Fixed industrial calculator validation issues
+  - Added 50+ countries to country selection list (from 6 to 56 countries)
+  - Added waste calculation to personal carbon footprint with weekly waste input
+  - Enhanced emission factors with comprehensive country-specific data
+  - Added detailed visual explanations for all charts and graphs
+  - Created comprehensive bar chart for category-wise emission analysis
+  - Added performance assessment with benchmarking against global/industry averages
+  - Enhanced AI recommendations with waste reduction suggestions
+  - Added detailed insights component with action priorities
+  - Improved chart tooltips and explanations for better user understanding
+  - Enhanced forecast visualization with axis labels and methodology explanations
 
 ## User Preferences
 

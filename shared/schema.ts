@@ -18,6 +18,7 @@ export const personalEmissions = pgTable("personal_emissions", {
   publicTransportUsage: text("public_transport_usage").notNull(),
   dietType: text("diet_type").notNull(),
   monthlyShopping: real("monthly_shopping").notNull(),
+  weeklyWasteKg: real("weekly_waste_kg").notNull(),
   totalEmissions: real("total_emissions").notNull(),
   createdAt: timestamp("created_at").defaultNow(),
 });

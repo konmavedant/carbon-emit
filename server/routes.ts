@@ -55,7 +55,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
         suggestions
       });
     } catch (error) {
-      res.status(400).json({ error: "Invalid input data" });
+      console.error("Industrial calculation error:", error);
+      res.status(400).json({ 
+        error: "Invalid input data", 
+        details: error instanceof Error ? error.message : 'Unknown error' 
+      });
     }
   });
 

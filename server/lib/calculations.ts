@@ -7,6 +7,7 @@ export interface PersonalEmissionCalculations {
   flights: number;
   diet: number;
   shopping: number;
+  waste: number;
   totalEmissions: number;
 }
 
@@ -26,16 +27,17 @@ export interface IndustrialEmissionCalculations {
 }
 
 export function calculatePersonalEmissions(data: InsertPersonalEmissions): PersonalEmissionCalculations {
-  const countryFactor = EMISSION_FACTORS.electricity[data.country] || EMISSION_FACTORS.electricity.default;
+  const countryFactor = (EMISSION_FACTORS.electricity as any)[data.country] || EMISSION_FACTORS.electricity.default;
   
   // Calculate emissions by category (tonnes CO2e)
   const electricity = (data.electricityKwh * 12 * countryFactor) / 1000;
   const transport = (data.weeklyDrivingKm * 52 * EMISSION_FACTORS.transport.car) / 1000;
   const flights = data.annualFlightHours * EMISSION_FACTORS.transport.flight;
-  const diet = EMISSION_FACTORS.diet[data.dietType] || EMISSION_FACTORS.diet.mixed;
+  const diet = (EMISSION_FACTORS.diet as any)[data.dietType] || EMISSION_FACTORS.diet.mixed;
   const shopping = (data.monthlyShopping * 12 * EMISSION_FACTORS.lifestyle.shopping) / 1000;
+  const waste = (data.weeklyWasteKg * 52 * EMISSION_FACTORS.lifestyle.waste) / 1000;
   
-  const totalEmissions = electricity + transport + flights + diet + shopping;
+  const totalEmissions = electricity + transport + flights + diet + shopping + waste;
 
   return {
     electricity,
@@ -43,6 +45,7 @@ export function calculatePersonalEmissions(data: InsertPersonalEmissions): Perso
     flights,
     diet,
     shopping,
+    waste,
     totalEmissions,
   };
 }

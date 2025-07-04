@@ -41,6 +41,10 @@ export default function AiRecommendations({ suggestions }: AiRecommendationsProp
           <Brain className="h-6 w-6 mr-3 text-emerald-500" />
           AI-Powered Optimization Recommendations
         </CardTitle>
+        <p className="text-sm text-gray-600 mt-2">
+          These personalized recommendations are generated based on your emission profile. 
+          Implementation priority is ranked by potential impact and feasibility.
+        </p>
       </CardHeader>
       <CardContent>
         <div className="grid md:grid-cols-3 gap-6">
