@@ -18,7 +18,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
             <Leaf className="h-8 w-8 text-emerald-500" />
-            <span className="ml-2 text-xl font-bold text-gray-900"></span>
+            <span className="ml-2 text-xl font-bold text-gray-900">CarbonIQ</span>
           </Link>
           
           <nav className="hidden md:flex space-x-8">
