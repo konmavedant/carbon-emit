@@ -26,9 +26,6 @@ export default function Hero() {
                 Start Calculation
               </Button>
             </Link>
-            <Button variant="outline" size="lg">
-              Learn More
-            </Button>
           </div>
         </motion.div>
       </div>
