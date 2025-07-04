@@ -13,11 +13,11 @@ export default function Hero() {
           className="text-center"
         >
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            AI-Powered Carbon
+            Carbon
             <span className="text-emerald-500"> Emission Calculator</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Calculate, forecast, and optimize your carbon footprint with advanced AI/ML insights.
+            Calculate, forecast, and optimize your carbon footprint with advanced insights.
             GHG Protocol compliant for both personal and industrial use.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
