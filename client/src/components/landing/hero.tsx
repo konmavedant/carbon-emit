@@ -14,7 +14,7 @@ export default function Hero() {
         >
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
             Carbon
-            <span className="text-emerald-500"> Emission Calculator</span>
+            <span className="text-emerald-500"> Footprint Calculator</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Calculate, forecast, and optimize your carbon footprint with advanced insights.
