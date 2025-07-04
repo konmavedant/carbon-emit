@@ -124,6 +124,7 @@ The application uses three main database tables:
   - Removed carbon dashboard and offset registry external links from personal calculator
   - Removed all AI references from the application interface and documentation
   - Replaced with "optimization recommendations" and "automated suggestions" terminology
+  - Implemented conditional action buttons: industrial results show dashboard/registry links, personal results show simple action suggestions
 
 ## User Preferences
 

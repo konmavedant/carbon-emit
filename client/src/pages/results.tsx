@@ -38,7 +38,7 @@ export default function Results() {
         <EmissionInsights data={results} />
         <EmissionCharts data={results} />
         <OptimizationRecommendations suggestions={results.suggestions} />
-        <ActionButtons />
+        <ActionButtons isIndustrial={results.calculations.scope1 !== undefined} />
       </div>
     </div>
   );
