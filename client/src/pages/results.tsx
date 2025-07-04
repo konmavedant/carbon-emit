@@ -2,7 +2,7 @@ import { useLocation } from "wouter";
 import { useEffect } from "react";
 import EmissionCharts from "@/components/results/emission-charts";
 import EmissionInsights from "@/components/results/emission-insights";
-import AiRecommendations from "@/components/results/ai-recommendations";
+import OptimizationRecommendations from "@/components/results/optimization-recommendations";
 import ActionButtons from "@/components/results/action-buttons";
 
 export default function Results() {
@@ -31,13 +31,13 @@ export default function Results() {
             Your Carbon Footprint Analysis
           </h1>
           <p className="text-lg text-gray-600">
-            AI-powered insights and recommendations for optimization
+            Detailed insights and recommendations for optimization
           </p>
         </div>
 
         <EmissionInsights data={results} />
         <EmissionCharts data={results} />
-        <AiRecommendations suggestions={results.suggestions} />
+        <OptimizationRecommendations suggestions={results.suggestions} />
         <ActionButtons />
       </div>
     </div>

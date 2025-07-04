@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertPersonalEmissionsSchema, insertIndustrialEmissionsSchema } from "@shared/schema";
 import { calculatePersonalEmissions, calculateIndustrialEmissions } from "./lib/calculations";
-import { generateOptimizationSuggestions, generateEmissionForecast } from "./lib/ai-mock";
+import { generateOptimizationSuggestions, generateEmissionForecast } from "./lib/recommendations";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Personal emissions calculation

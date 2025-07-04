@@ -140,23 +140,32 @@ export default function EmissionCharts({ data }: EmissionChartsProps) {
             </p>
           </CardHeader>
           <CardContent>
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={350}>
               <PieChart>
                 <Pie
                   data={pieData}
                   cx="50%"
                   cy="50%"
-                  labelLine={false}
-                  label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                  outerRadius={80}
+                  labelLine={true}
+                  label={({ name, percent, value }) => `${name}: ${value.toFixed(2)}t (${(percent * 100).toFixed(1)}%)`}
+                  outerRadius={100}
+                  innerRadius={40}
                   fill="#8884d8"
                   dataKey="value"
+                  stroke="#ffffff"
+                  strokeWidth={2}
                 >
                   {pieData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />
                   ))}
                 </Pie>
-                <Tooltip formatter={(value: number) => [`${value.toFixed(2)} tonnes CO₂e`, 'Emissions']} />
+                <Tooltip 
+                  formatter={(value: number, name: string) => [
+                    `${value.toFixed(3)} tonnes CO₂e`,
+                    `${name} Emissions`
+                  ]}
+                  labelFormatter={() => 'Emission Category'}
+                />
               </PieChart>
             </ResponsiveContainer>
             <div className="mt-4 text-xs text-gray-500">
@@ -169,7 +178,7 @@ export default function EmissionCharts({ data }: EmissionChartsProps) {
           <CardHeader>
             <CardTitle>12-Month Emissions Forecast</CardTitle>
             <p className="text-sm text-gray-600 mt-2">
-              This AI-powered forecast predicts your future emissions based on current patterns and optimization opportunities. The declining trend assumes implementation of recommended efficiency measures.
+              This forecast predicts your future emissions based on current patterns and optimization opportunities. The declining trend assumes implementation of recommended efficiency measures.
             </p>
           </CardHeader>
           <CardContent>

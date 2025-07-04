@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, Leaf, Wind, Route, Cog, Sun, Recycle } from "lucide-react";
 
-interface AiRecommendationsProps {
+interface OptimizationRecommendationsProps {
   suggestions: Array<{
     category: string;
     title: string;
@@ -12,7 +12,7 @@ interface AiRecommendationsProps {
   }>;
 }
 
-export default function AiRecommendations({ suggestions }: AiRecommendationsProps) {
+export default function OptimizationRecommendations({ suggestions }: OptimizationRecommendationsProps) {
   const getIcon = (iconName: string) => {
     const icons = {
       sun: Sun,
@@ -39,7 +39,7 @@ export default function AiRecommendations({ suggestions }: AiRecommendationsProp
       <CardHeader>
         <CardTitle className="flex items-center text-xl">
           <Brain className="h-6 w-6 mr-3 text-emerald-500" />
-          AI-Powered Optimization Recommendations
+          Optimization Recommendations
         </CardTitle>
         <p className="text-sm text-gray-600 mt-2">
           These personalized recommendations are generated based on your emission profile. 

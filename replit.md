@@ -1,8 +1,8 @@
-# AI-Powered Carbon Emission Calculator
+# Carbon Emission Calculator
 
 ## Overview
 
-This is a full-stack web application for calculating carbon emissions for both personal and industrial use. The application provides AI-powered insights, GHG Protocol compliance, and integrates with external carbon management platforms. It features a React frontend with TypeScript, an Express.js backend, and uses PostgreSQL with Drizzle ORM for data persistence.
+This is a full-stack web application for calculating carbon emissions for both personal and industrial use. The application provides comprehensive insights, GHG Protocol compliance, and detailed emission analysis. It features a React frontend with TypeScript, an Express.js backend, and uses PostgreSQL with Drizzle ORM for data persistence.
 
 ## System Architecture
 
@@ -43,9 +43,9 @@ The application uses three main database tables:
 - **Industrial Emissions**: Calculates Scope 1, 2, and 3 emissions following GHG Protocol standards
 - **Emission Factors**: Compliant with GHG Protocol using country-specific grid factors
 
-### AI/ML Features
+### Advanced Features
 - **Forecast Generation**: Time-series prediction for emission trends
-- **Optimization Suggestions**: AI-generated recommendations for emission reduction
+- **Optimization Suggestions**: Automated recommendations for emission reduction
 - **Risk Assessment**: Identifies high-impact emission categories
 
 ### User Interface
@@ -116,10 +116,14 @@ The application uses three main database tables:
   - Added detailed visual explanations for all charts and graphs
   - Created comprehensive bar chart for category-wise emission analysis
   - Added performance assessment with benchmarking against global/industry averages
-  - Enhanced AI recommendations with waste reduction suggestions
+  - Enhanced optimization recommendations with waste reduction suggestions
   - Added detailed insights component with action priorities
   - Improved chart tooltips and explanations for better user understanding
   - Enhanced forecast visualization with axis labels and methodology explanations
+  - Improved pie chart visualization with better labeling and donut chart style
+  - Removed carbon dashboard and offset registry external links from personal calculator
+  - Removed all AI references from the application interface and documentation
+  - Replaced with "optimization recommendations" and "automated suggestions" terminology
 
 ## User Preferences
 
